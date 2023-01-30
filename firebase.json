@@ -5,6 +5,12 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
   "database": {
@@ -16,7 +22,8 @@
   },
   "functions": [
     {
-      "source": "functions",
+      "source": "public",
+      "main": "index.js",
       "codebase": "default",
       "ignore": [
         "node_modules",

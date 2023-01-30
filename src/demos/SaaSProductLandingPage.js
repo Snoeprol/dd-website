@@ -29,7 +29,7 @@ export default () => {
         subheading={<Subheading>Features</Subheading>}
         heading={
           <>
-            We have Amazing <HighlightedText>Service.</HighlightedText>
+            We have Amazing magic <HighlightedText>Service.</HighlightedText>
           </>
         }
       />
