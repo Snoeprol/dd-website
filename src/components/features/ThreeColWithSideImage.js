@@ -75,16 +75,12 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
    */
 
   const defaultCards = [
-    {
-      imageSrc: WebImage,
-      title: "Web-apps",
-      description: "We strictly only deal with vendors that provide top notch security."
-    },
-    { imageSrc: AiImage, title: "AI-deployment" },
-    { imageSrc: DbImage, title: "Databases" },
-    { imageSrc: ApiImage, title: "custom APIs" },
-    { imageSrc: AndroidImage, title: "Mobile apps" },
-    { imageSrc: VisualizationImage, title: "Visualization" }
+    { imageSrc: WebImage, title: "Web-apps", description: "We develop websites, dashboards, and web-apps using the latest technologies."},
+    { imageSrc: AiImage, title: "AI-Models", description: "We deploy case-specific AI models to do the job." },
+    { imageSrc: DbImage, title: "Databases", description: "We design and deploy databases to store your data." },
+    { imageSrc: ApiImage, title: "custom APIs", description: "We develop custom APIs to integrate with your systems." },
+    { imageSrc: AndroidImage, title: "Mobile apps", description: "We develop mobile apps for Android and iOS." },
+    { imageSrc: VisualizationImage, title: "Visualization", description: "We help you understand your data using visualization." }
   ];
 
   if (!cards) cards = defaultCards;

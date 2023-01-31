@@ -19,7 +19,7 @@ import { ReactComponent as HandleIcon } from "images/handle-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "images/arrow-right-3-icon.svg";
 
 import heroScreenshotImageSrc from "images/demo/MainLandingPageHero.png";
-import logo from "images/logo.svg";
+import logo from "images/logo.png";
 import useInView from "helpers/useInView";
 
 /* Hero */
@@ -138,7 +138,7 @@ export default ({
         <Content2Xl>
           <NavRow>
             <LogoLink href="/">
-              <img src={logo} alt="" />
+              <img src={logo} alt=""/>
               Treact
             </LogoLink>
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">

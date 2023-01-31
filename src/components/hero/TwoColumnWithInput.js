@@ -57,6 +57,7 @@ export default ({ roundedHeaderButton }) => {
     emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
       .then((result) => {
           // show the user a success message
+          // reset the form
       }, (error) => {
           // show the user an error
       });
@@ -83,9 +84,9 @@ export default ({ roundedHeaderButton }) => {
               <label>Email</label>
               <input type="email" name="user_email" />
               <label>Message</label>
-              <input name="message" />
+              <input type="text" name="message" />
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" styled=""/>
             </form>
 
             </Actions>

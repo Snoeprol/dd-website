@@ -147,35 +147,32 @@ export default () => {
         }
         faqs={[
           {
-            question: "Are all the templates easily customizable ?",
+            question: "What services does your company offer?",
             answer:
-              "2222 Yes, they all are. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "Our company offers software development services including web development, mobile app development, and custom software solutions."
+                  },
+          {
+            question: "What technology stacks do you work with?",
+            answer:
+            "We work with a variety of technology stacks including JavaScript, Python, Java, MongoDB, Pytorch and more."
           },
           {
-            question: "How long do you usually support an standalone template for ?",
+            question: "Do you offer website design services?",
             answer:
-              "38 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "Yes, we offer website design services in addition to development."          },
+          {
+            question: "Do you work with clients globally?",
+            answer:
+            "Yes, we have a global client base and have experience working with clients in various time zones."
           },
           {
-            question: "What kind of payment methods do you accept ?",
+            question: " What is your process for software development projects?",
             answer:
-              "40 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
+          " Our process includes requirements gathering, design, development, testing, and deployment. We use Agile methodologies to ensure a smooth and efficient project flow."          },
           {
-            question: "Is there a subscribption service to get the latest templates ?",
+            question: "What is your pricing model?",
             answer:
-              "42 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Are the templates compatible with the React ?",
-            answer:
-              "44 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Do you really support Internet Explorer 11 ?",
-            answer:
-              "46 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          }
+          "Our pricing model is project-based and varies based on the scope and complexity of the project. We provide a detailed quote after understanding the project requirements.          "          }
         ]}
       />
       <GetStarted/>
