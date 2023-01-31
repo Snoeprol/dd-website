@@ -52,15 +52,19 @@ export default ({ roundedHeaderButton }) => {
   const form = useRef();
   
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-  
-    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
-      .then((result) => {
-          // show the user a success message
-          // reset the form
-      }, (error) => {
-          // show the user an error
-      });
+    // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    
+    const userEmail = form.current.elements.user_email.value;
+    // Make a print statement to see if the email is being sent
+    console.log(form.current.elements.user_email.value);
+  //   emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK', {to_email: ['mariovanrooij@hotmail.com', userEmail]})
+  //     .then((result) => {
+  //         // show the user a success message
+  //         // reset the form
+  //     }, (error) => {
+  //         // show the user an error
+  //     });
+  // };
   };
 
   return (
@@ -78,6 +82,7 @@ export default ({ roundedHeaderButton }) => {
             <Actions>
               {/* <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button> */}
+              {/* Make the form fit in the screen */}
             <form ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" />

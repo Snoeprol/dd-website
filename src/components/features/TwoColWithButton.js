@@ -20,6 +20,8 @@ const Image = styled.img(props => [
   props.imageRounded && tw`rounded`,
   props.imageBorder && tw`border`,
   props.imageShadow && tw`shadow`,
+  // Make it fit on any screen size
+  tw`w-full max-w-4xl mx-auto`
 ]);
 
 const DecoratorBlob = styled(SvgDotPattern)(props => [
