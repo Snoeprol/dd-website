@@ -60,7 +60,7 @@ const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-p
 
 export default ({
   heading = "Modern React Templates, Just For You",
- description="Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.",
+ description="Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.",
   primaryButtonText="Get Started",
   primaryButtonUrl="#",
   watchVideoButtonText="Watch Video",

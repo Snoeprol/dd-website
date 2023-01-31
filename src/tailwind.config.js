@@ -1,3 +1,5 @@
+// primary-300 colors defined here
+
 module.exports = {
   prefix: '',
   important: false,
@@ -19,9 +21,9 @@ module.exports = {
       primary: {
         100: '#a273ff',
         200: '#935bff',
-        300: '#8344ff',
+        300: '#30D5C8',
         400: '#742cff',
-        500: '#6415FF',
+        500: '#30D5C8',
         600: '#5a13e6',
         700: '#5011cc',
         800: '#460fb3',

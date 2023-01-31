@@ -52,7 +52,7 @@ export default ({
       We have the most <span tw="text-primary-500">professional</span> marketing team.
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "23 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   primaryButtonText = "See Our Portfolio",
   primaryButtonUrl = "https://timerse.com",
   features = null,
@@ -72,7 +72,7 @@ export default ({
     },
     {
       Icon: MoneyIcon,
-      title: "Affordable",
+      title: "Affordable2",
       description: "We promise to offer you the best rate we can - at par with the industry standard."
     }
   ];

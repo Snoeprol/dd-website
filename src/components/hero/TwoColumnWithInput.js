@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import emailjs from '@emailjs/browser';
 //eslint-disable-next-line
 import { css } from "styled-components/macro";
 
@@ -18,6 +19,7 @@ const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-c
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
 const Paragraph = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
 
+  
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {
@@ -46,6 +48,20 @@ const CustomersLogoStrip = styled.div`
 `;
 
 export default ({ roundedHeaderButton }) => {
+
+  const form = useRef();
+  
+  const sendEmail = (e) => {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+  
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
+      .then((result) => {
+          // show the user a success message
+      }, (error) => {
+          // show the user an error
+      });
+  };
+
   return (
     <>
       <Header roundedHeaderButton={roundedHeaderButton} />
@@ -53,16 +69,24 @@ export default ({ roundedHeaderButton }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              Beautiful React Templates <span tw="text-primary-500">for you.</span>
+              Software Solutions, <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-              Our templates are easy to setup, understand and customize. Fully modular components with a variety of
-              pages and components.
+            Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
             </Paragraph>
             <Actions>
-              <input type="text" placeholder="Your E-mail Address" />
-              {/* <button >Get Started</button> but add onClick event */}
-              <button>Get Started</button>
+              {/* <input type="text" placeholder="Your E-mail Address" />
+              <button>Get Started</button> */}
+            <form ref={form} onSubmit={sendEmail}>
+              <label>Name</label>
+              <input type="text" name="user_name" />
+              <label>Email</label>
+              <input type="email" name="user_email" />
+              <label>Message</label>
+              <input name="message" />
+              <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              <input type="submit" value="Send" />
+            </form>
 
             </Actions>
             <CustomersLogoStrip>

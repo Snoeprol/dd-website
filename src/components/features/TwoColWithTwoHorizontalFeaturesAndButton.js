@@ -66,7 +66,7 @@ export default ({
       Designed & Developed by <span tw="text-primary-500">Professionals.</span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "In our work environment we strongly believe values and ethics are among the most important things. ",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
   imageSrc = TeamIllustrationSrc,
@@ -96,7 +96,7 @@ export default ({
     },
     {
       Icon: MoneyIcon,
-      title: "Affordable",
+      title: "Affordable3",
       description: "We promise to offer you the best rate we can - at par with the industry standard.",
       iconContainerCss: tw`bg-red-300 text-red-800`
     }

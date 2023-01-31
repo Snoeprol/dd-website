@@ -17,6 +17,13 @@ import FastIconImage from "images/fast-icon.svg";
 import ReliableIconImage from "images/reliable-icon.svg";
 import SimpleIconImage from "images/simple-icon.svg";
 
+import AiImage from "images/icons8-ai-64.png";
+import DbImage from "images/icons8-database-64.png";
+import ApiImage from "images/icons8-data-transfer-64.png";
+import WebImage from "images/icons8-web-coding-64.png";
+import AndroidImage from "images/icons8-smartphone-64.png";
+import VisualizationImage from "images/icons8-graphic-64.png";
+
 const Container = tw.div`relative`;
 
 const ThreeColumnContainer = styled.div`
@@ -37,7 +44,7 @@ const Card = styled.div`
   .imageContainer {
     ${tw`border text-center rounded-full p-5 flex-shrink-0`}
     img {
-      ${tw`w-6 h-6`}
+      ${tw`mt-6 mt-6`}
     }
   }
 
@@ -58,7 +65,7 @@ const DecoratorBlob = styled(SvgDecoratorBlob3)`
   ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-48 `}
 `;
 
-export default ({ cards = null, heading = "Amazing Features", subheading = "Features", description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }) => {
+export default ({ cards = null, heading = "Amazing Features", subheading = "Features", description = "We provide services in the following technologies:" }) => {
   /*
    * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component) or you can directly pass this using the cards prop:
    *  1) imageSrc - the image shown at the top of the card
@@ -69,15 +76,15 @@ export default ({ cards = null, heading = "Amazing Features", subheading = "Feat
 
   const defaultCards = [
     {
-      imageSrc: ShieldIconImage,
-      title: "Secure",
+      imageSrc: WebImage,
+      title: "Web-apps",
       description: "We strictly only deal with vendors that provide top notch security."
     },
-    { imageSrc: SupportIconImage, title: "24/7 Support" },
-    { imageSrc: CustomizeIconImage, title: "Customizable" },
-    { imageSrc: ReliableIconImage, title: "Reliable" },
-    { imageSrc: FastIconImage, title: "Fast" },
-    { imageSrc: SimpleIconImage, title: "Easy" }
+    { imageSrc: AiImage, title: "AI-deployment" },
+    { imageSrc: DbImage, title: "Databases" },
+    { imageSrc: ApiImage, title: "custom APIs" },
+    { imageSrc: AndroidImage, title: "Mobile apps" },
+    { imageSrc: VisualizationImage, title: "Visualization" }
   ];
 
   if (!cards) cards = defaultCards;
