@@ -20,7 +20,6 @@ const Image = styled.img(props => [
   props.imageRounded && tw`rounded`,
   props.imageBorder && tw`border`,
   props.imageShadow && tw`shadow`,
-  // Make it fit on any screen size
   tw`w-full max-w-4xl mx-auto`
 ]);
 
@@ -51,7 +50,7 @@ export default ({
   ),
   description = "By mainting close relationships with our clients, we are able to provide the best possible service and support.",
   primaryButtonText = "Learn More",
-  primaryButtonUrl = "https://timerse.com",
+  primaryButtonUrl = "/contact-us",
   imageSrc = TeamIllustrationSrc,
   buttonRounded = true,
   imageRounded = true,

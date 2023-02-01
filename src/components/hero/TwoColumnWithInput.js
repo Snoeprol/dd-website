@@ -52,20 +52,35 @@ export default ({ roundedHeaderButton }) => {
   const form = useRef();
   
   const sendEmail = (e) => {
-    // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
     
     const userEmail = form.current.elements.user_email.value;
     // Make a print statement to see if the email is being sent
-    console.log(form.current.elements.user_email.value);
-  //   emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK', {to_email: ['mariovanrooij@hotmail.com', userEmail]})
-  //     .then((result) => {
-  //         // show the user a success message
-  //         // reset the form
-  //     }, (error) => {
-  //         // show the user an error
-  //     });
-  // };
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK', {to_email: "mariovanrooij@hotmail.com"})
+      .then((result) => {
+          // show the user a success message
+          // reset the form
+          form.current.reset();
+      }, (error) => {
+          // show the user an error
+      });
   };
+
+  // const form = useRef();
+
+  // if (form) {
+  //   form.addEventListener('submit', function(event) {
+  //   event.preventDefault();
+  //   emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', this, 'X1zFNtgTRJGKe9mcK')
+  //   .then(function() {
+  //   alert("Your message has been sent!");
+  //   })
+  //   .catch(function(error) {
+  //   alert("Something went wrong, please try again later.");
+  //   });
+  //   });
+  //   }
+  
 
   return (
     <>
@@ -83,8 +98,10 @@ export default ({ roundedHeaderButton }) => {
               {/* <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button> */}
               {/* Make the form fit in the screen */}
-            <form ref={form} onSubmit={sendEmail}>
-              <label>Name</label>
+            <form id="myform" ref={form} action={sendEmail}> 
+
+            {/* */}
+              <label>Name2</label>
               <input type="text" name="user_name" />
               <label>Email</label>
               <input type="email" name="user_email" />

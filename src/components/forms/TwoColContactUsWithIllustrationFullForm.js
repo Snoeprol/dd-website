@@ -5,6 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import EmailIllustrationSrc from "images/email-illustration.svg";
+import emailjs from '@emailjs/browser';
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -36,13 +37,26 @@ const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 export default ({
   subheading = "Contact Us",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with us.</>,
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "Send us a message using the form below and we'll get back to you as soon as possible.",
   submitButtonText = "Send",
   formAction = "#",
   formMethod = "get",
   textOnLeft = true,
 }) => {
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+  const sendEmail = (e) => {
+    // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    
+    const userEmail = Form.current.elements.user_email.value;
+    // Make a print statement to see if the email is being sent
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', Form.current, 'X1zFNtgTRJGKe9mcK', {to_email: [userEmail, "mariovanrooij@hotmail.com"]})
+      .then((result) => {
+          // show the user a success message
+          // reset the form
+      }, (error) => {
+          // show the user an error
+      });
+  };
 
   return (
     <Container>
@@ -55,12 +69,12 @@ export default ({
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
-            <Form action={formAction} method={formMethod}>
+            <Form action={formAction} method={formMethod} onSubmit={sendEmail}>
               <Input type="email" name="email" placeholder="Your Email Address" />
               <Input type="text" name="name" placeholder="Full Name" />
               <Input type="text" name="subject" placeholder="Subject" />
               <Textarea name="message" placeholder="Your Message Here" />
-              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
+              <SubmitButton type="submit" value="Send">{submitButtonText} </SubmitButton>
             </Form>
           </TextContent>
         </TextColumn>

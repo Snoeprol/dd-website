@@ -40,7 +40,7 @@ export default ({
   const logoLink = (
     <LogoLink href="/">
       <img src={logoImageSrc} alt="Logo" />
-      Treact
+      Data Dynamics
     </LogoLink>
   );
   const navLinks = [

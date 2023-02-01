@@ -40,7 +40,34 @@ export default ({
   textOnLeft = true,
 }) => {
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+  // const form = useRef();
+  
+  // const sendEmail = (e) => {
+  //   // e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    
+  //   const userEmail = form.current.elements.user_email.value;
 
+  //   emailjs.init("<your-service-id>", "<your-user-id>");
+  //   // Make a print statement to see if the email is being sent
+  //   emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK', {to_email: [userEmail, "mariovanrooij@hotmail.com"]})
+  //     .then((result) => {
+  //         // show the user a success message
+  //         // reset the form
+  //     }, (error) => {
+  //         // show the user an error
+  //     });
+  // };
+
+  const form2 = document.getElementById('myform');
+
+  form2.addEventListener('submit', function(event) {
+    event.preventDefault();
+    // generate the contact number value
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', this, 'X1zFNtgTRJGKe9mcK')
+    .then(alert("Your message has been sent!"))
+    .catch(alert("Something went wrong, please try again later."));
+  });
+  
   return (
     <Container>
       <TwoColumn>
@@ -52,10 +79,21 @@ export default ({
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            <Form action={formAction} method={formMethod}>
+            {/* <Form action={formAction} method={formMethod} onSubmit={sendEmail}>
               <Input type="email" name="email" placeholder="Your Email Address" />
               <SubmitButton type="submit">{submitButtonText}</SubmitButton>
-            </Form>
+            </Form> */}
+            <form id="myform" ref={form} onSubmit={sendEmail}>
+              <label>Name</label>
+              <input type="text" name="user_name" />
+              <label>Email</label>
+              <input type="email" name="user_email" />
+              <label>Message</label>
+              <input type="text" name="message" />
+              <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              <input type="submit" value="Send" styled=""/>
+            </form>
+
           </TextContent>
         </TextColumn>
       </TwoColumn>

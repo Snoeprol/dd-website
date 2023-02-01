@@ -40,8 +40,8 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 
 export default ({
   subheading = "FAQS",
-  heading = "Welcome to our Q&A section! We are your trusted source for software solutions. Our team of experts is ready to answer any questions you may have about our products and services. Whether you need help with a specific issue, or just want to learn more about our offerings, we're here to help. Simply ask your question and one of our experts will provide you with a comprehensive and prompt response.",
-  description = "",
+  heading = "You have Questions ?",
+  description = "And we have got answers to all of them. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   faqs = [
     {
       question: "Is lunch provided free of cost ?",

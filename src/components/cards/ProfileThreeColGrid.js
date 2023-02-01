@@ -43,122 +43,118 @@ const CardLinks = styled.div`
 export default ({
   heading = "Meet These Fine Folks.",
   subheading = "Our Team",
-  description = "4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description = "Our team is small but mighty. We are a diverse group of people who are passionate about what we do. We are a team of designers, developers, and marketers who are dedicated to helping you succeed.",
   cards = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+      imageSrc: "https://media.licdn.com/dms/image/C4E03AQEzTsiV5_fUmQ/profile-displayphoto-shrink_800_800/0/1639945417598?e=1680739200&v=beta&t=2zFG8U75o7GqWn9mUIWtR_BGM8TvaiUBRxoRCvLKvdo",
       position: "Founder",
-      name: "Adam Cuppy",
+      name: "Mario van Rooij",
       links: [
         {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
+          url: "https://www.linkedin.com/in/mario-van-rooij-94a311162/",
           icon: LinkedinIcon,
         },
         {
-          url: "https://github.com",
+          url: "https://github.com/snoeprol",
           icon: GithubIcon,
         },
       ],
     },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Sr. Designer",
-      name: "Charlotte Hale",
-      links: [
-        {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com",
-          icon: GithubIcon,
-        },
-      ],
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Jr. Designer",
-      name: "Silvester Wize",
-      links: [
-        {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com",
-          icon: GithubIcon,
-        },
-      ],
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
-      position: "Lead Developer",
-      name: "Himali Turn",
-      links: [
-        {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com",
-          icon: GithubIcon,
-        },
-      ],
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
-      position: "Sr. Developer",
-      name: "Troye Sivan",
-      links: [
-        {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com",
-          icon: GithubIcon,
-        },
-      ],
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
-      position: "Quality Assurance",
-      name: "Holo Wo",
-      links: [
-        {
-          url: "https://twitter.com",
-          icon: TwitterIcon,
-        },
-        {
-          url: "https://linkedin.com",
-          icon: LinkedinIcon,
-        },
-        {
-          url: "https://github.com",
-          icon: GithubIcon,
-        },
-      ],
-    },
+    // {
+    //   imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+    //   position: "Sr. Designer",
+    //   name: "Charlotte Hale",
+    //   links: [
+    //     {
+    //       url: "https://twitter.com",
+    //       icon: TwitterIcon,
+    //     },
+    //     {
+    //       url: "https://linkedin.com",
+    //       icon: LinkedinIcon,
+    //     },
+    //     {
+    //       url: "https://github.com",
+    //       icon: GithubIcon,
+    //     },
+    //   ],
+    // },
+    // {
+    //   imageSrc: "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+    //   position: "Jr. Designer",
+    //   name: "Silvester Wize",
+    //   links: [
+    //     {
+    //       url: "https://twitter.com",
+    //       icon: TwitterIcon,
+    //     },
+    //     {
+    //       url: "https://linkedin.com",
+    //       icon: LinkedinIcon,
+    //     },
+    //     {
+    //       url: "https://github.com",
+    //       icon: GithubIcon,
+    //     },
+    //   ],
+    // },
+    // {
+    //   imageSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=2.95&w=512&h=512&q=80",
+    //   position: "Lead Developer",
+    //   name: "Himali Turn",
+    //   links: [
+    //     {
+    //       url: "https://twitter.com",
+    //       icon: TwitterIcon,
+    //     },
+    //     {
+    //       url: "https://linkedin.com",
+    //       icon: LinkedinIcon,
+    //     },
+    //     {
+    //       url: "https://github.com",
+    //       icon: GithubIcon,
+    //     },
+    //   ],
+    // },
+    // {
+    //   imageSrc: "https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
+    //   position: "Sr. Developer",
+    //   name: "Troye Sivan",
+    //   links: [
+    //     {
+    //       url: "https://twitter.com",
+    //       icon: TwitterIcon,
+    //     },
+    //     {
+    //       url: "https://linkedin.com",
+    //       icon: LinkedinIcon,
+    //     },
+    //     {
+    //       url: "https://github.com",
+    //       icon: GithubIcon,
+    //     },
+    //   ],
+    // },
+    // {
+    //   imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&fit=facearea&facepad=3.45&w=512&h=512&q=80",
+    //   position: "Quality Assurance",
+    //   name: "Holo Wo",
+    //   links: [
+    //     {
+    //       url: "https://twitter.com",
+    //       icon: TwitterIcon,
+    //     },
+    //     {
+    //       url: "https://linkedin.com",
+    //       icon: LinkedinIcon,
+    //     },
+    //     {
+    //       url: "https://github.com",
+    //       icon: GithubIcon,
+    //     },
+    //   ],
+    // },
   ]
 }) => {
   return (
