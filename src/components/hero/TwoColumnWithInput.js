@@ -117,8 +117,10 @@ export default ({ roundedHeaderButton }) => {
             <form id="myform" ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" />
+              <p> &nbsp;</p>
               <label>Email</label>
               <input type="email" name="user_email" />
+              <p> &nbsp;</p>
               <label>Message</label>
               <input type="text" name="message" />
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
