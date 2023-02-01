@@ -33,13 +33,33 @@ const Input = tw.input`mt-6 first:mt-0 border-b-2 py-3 focus:outline-none font-m
 const Textarea = styled(Input).attrs({as: "textarea"})`
   ${tw`h-24`}
 `
+
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
-  input {
-    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+  form {
+    ${tw`p-4`}
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 80%;
+    }
   }
-  button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+  input[name="message"] {
+    ${tw`h-20 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
+    @media (max-width: 767px) {
+      height: 20vh;
+      width: 80%;
+    }
+  }
+  input[name="user_name"],
+  input[name="user_email"] {
+    ${tw`h-12 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
+    @media (max-width: 767px) {
+      height: 10vh;
+      width: 80%;
+    }
+  }
+  button[type="submit"] {
+    ${tw`block w-full h-12 p-4 bg-primary-500 text-black font-bold rounded-full py-4 flex items-center justify-center focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
@@ -97,7 +117,7 @@ export default ({
               <label>Message</label>
               <input type="text" name="message" />
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              <input type="submit" value="Send" styled=""/>
+              <button type="submit" value="Send">Send</button>
             </form>
 
 
