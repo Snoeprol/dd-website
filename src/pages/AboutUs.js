@@ -32,7 +32,7 @@ export default () => {
         subheading={<Subheading>Our Vision</Subheading>}
         heading="We aim to disrupt the design space."
         buttonRounded={false}
-        primaryButtonText="Contact Us"
+        primaryButtonText="Contact Us"f
         imageSrc="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
         textOnLeft={false}
       /> */}

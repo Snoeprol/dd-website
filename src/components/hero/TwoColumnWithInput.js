@@ -122,7 +122,7 @@ export default ({ roundedHeaderButton }) => {
               <label>Message</label>
               <input type="text" name="message" />
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              <input type="submit" value="Send" styled=""/> 
+              <button type="submit" value="Send">Send</button>
             </form>
 
 

@@ -15,6 +15,7 @@ import Footer from "components/footers/FiveColumnWithBackground.js";
 // import heroScreenshotImageSrc from "images/hero-screenshot-1.png";
 import heroScreenshotImageSrc from "images/music-app.png";
 import macHeroScreenshotImageSrc from "images/hero-screenshot-2.png";
+// import prototypeIllustrationImageSrc from "images/prototype-illustration.svg";
 import prototypeIllustrationImageSrc from "images/prototype-illustration.svg";
 import { ReactComponent as BriefcaseIcon } from "feather-icons/dist/icons/briefcase.svg";
 import { ReactComponent as MoneyIcon } from "feather-icons/dist/icons/dollar-sign.svg";

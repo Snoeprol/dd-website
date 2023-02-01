@@ -6,7 +6,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 
-import logo from "../../images/logo.png";
+import logo from "../../images/logo_transparent.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
@@ -72,10 +72,12 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
    */
   const defaultLinks = [
     <NavLinks key={1}>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/about">About</NavLink>
       {/* <NavLink href="/blog">Blog</NavLink> */}
       {/* <NavLink href="/pricing">Pricing</NavLink> */}
       <NavLink href="/contact-us">Contact Us</NavLink>
+      
       {/* <NavLink href="/#" tw="lg:ml-12!">
         Login
       </NavLink>

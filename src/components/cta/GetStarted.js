@@ -3,14 +3,17 @@ import styled from "styled-components"; //eslint-disable-line
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-9.svg";
+
+import LogoImageSrc from "images/logo_transparent.png";
 import { ContentWithPaddingXl, Container } from "components/misc/Layouts";
+import googlePlayIconImageSrc from "images/logo_transparent.png"
 
 const PrimaryBackgroundContainer = tw.div`py-20 lg:py-24 bg-primary-500 rounded-lg relative`
-const Row = tw.div`px-8 max-w-screen-lg mx-auto flex items-center relative z-10 flex-col lg:flex-row text-center lg:text-left`;
+const Row = tw.div`px-8 max-w-screen-lg mx-auto flex items-center relative z-10 flex-col lg:flex-row text-center lg:text-center`;
 
 const ColumnContainer = tw.div`lg:w-1/2 max-w-lg`
 const TextContainer = tw(ColumnContainer)``;
-const Text = tw.h5`text-gray-100 text-2xl sm:text-3xl font-bold`;
+const Text = tw.h5`text-black text-2xl sm:text-3xl font-bold`;
 
 const LinksContainer = tw(ColumnContainer)`flex justify-center lg:justify-end mt-6 lg:mt-0 flex-col sm:flex-row`;
 
@@ -20,12 +23,19 @@ const PrimaryLink = tw(Link)`bg-red-500 text-gray-100 shadow-lg hocus:bg-red-600
 const SecondaryLink = tw(Link)`text-gray-100 border-gray-500 hover:bg-gray-100 hover:text-primary-500 hover:border-primary-500`;
 
 const DecoratorBlobContainer = tw.div`absolute inset-0 overflow-hidden rounded-lg`
-const DecoratorBlob1 = tw(SvgDecoratorBlob1)`absolute bottom-0 left-0 w-80 h-80 transform -translate-x-20 translate-y-32 text-primary-700 opacity-50`
+// const DecoratorBlob1 = <img src={LogoImageSrc}/>;
+const DecoratorBlob1 =  tw(SvgDecoratorBlob1)`absolute bottom-0 left-0 w-80 h-80 transform -translate-x-20 translate-y-32 text-primary-700 opacity-50`
 const DecoratorBlob2 = tw(SvgDecoratorBlob1)`absolute top-0 right-0 w-80 h-80 transform  translate-x-20 -translate-y-64 text-primary-700 opacity-50`
+
+const ImageLogo = tw.img`w-80 h-80`;
+
+
+
 export default ({
   text = "Ready To Get Started?",
   primaryLinkText = "Contact us",
   primaryLinkUrl = "/contact-us",
+  color="black",
   // secondaryLinkText = "Contact Us",
   // secondaryLinkUrl = "/contact-us",
   pushDownFooter = true
@@ -35,8 +45,9 @@ export default ({
       <ContentWithPaddingXl>
       <PrimaryBackgroundContainer>
         <Row>
-          <TextContainer>
-            <Text>{text}</Text>
+          {/* Put text in center */}
+          <TextContainer css={tw`flex items-center justify-end pr-8`}>
+            <Text color={color}>{text}</Text>
           </TextContainer>
           <LinksContainer>
             <PrimaryLink href={primaryLinkUrl}>{primaryLinkText}</PrimaryLink>
@@ -44,8 +55,7 @@ export default ({
           </LinksContainer>
         </Row>
         <DecoratorBlobContainer>
-          <DecoratorBlob1/>
-          <DecoratorBlob2/>
+          <ImageLogo src={googlePlayIconImageSrc}/>
         </DecoratorBlobContainer>
       </PrimaryBackgroundContainer>
       </ContentWithPaddingXl>
