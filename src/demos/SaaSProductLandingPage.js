@@ -70,7 +70,7 @@ export default () => {
           },
           {
             Icon: BriefcaseIcon,
-            title: "Honesty",
+            title: "Honest",
             description: "We promise to be honest and transparent with you in all our dealings.",
             iconContainerCss: tw`bg-red-300 text-red-800`
           }

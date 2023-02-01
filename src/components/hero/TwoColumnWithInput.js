@@ -33,6 +33,7 @@ const Actions = styled.div`
     ${tw`h-20 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
     @media (max-width: 767px) {
       height: 20vh;
+      width: 80%;
     }
   }
   input[name="user_name"],
@@ -40,10 +41,11 @@ const Actions = styled.div`
     ${tw`h-12 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
     @media (max-width: 767px) {
       height: 10vh;
+      width: 80%;
     }
   }
-  button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+  button[type="submit"] {
+    ${tw`block w-full h-12 p-4 bg-primary-500 text-black font-bold rounded-full py-4 flex items-center justify-center focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 
@@ -106,7 +108,7 @@ export default ({ roundedHeaderButton }) => {
               Software Solutions, <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-            2Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
+            Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
             </Paragraph>
             <Actions>
               {/* <input type="text" placeholder="Your E-mail Address" />
@@ -120,14 +122,14 @@ export default ({ roundedHeaderButton }) => {
               <label>Message</label>
               <input type="text" name="message" />
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              <input type="submit" value="Send" styled=""/>
+              <button type="submit" value="Send">Send</button>
             </form>
 
 
             </Actions>
             <CustomersLogoStrip>
-              <p>Our TRUSTED Customers</p>
-              <img src={CustomersLogoStripImage} alt="Our Customers" />
+              {/* <p>Our TRUSTED Customers</p>
+              <img src={CustomersLogoStripImage} alt="Our Customers" /> */}
             </CustomersLogoStrip>
           </LeftColumn>
           <RightColumn>
