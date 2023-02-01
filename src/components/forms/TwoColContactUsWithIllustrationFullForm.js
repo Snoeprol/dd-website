@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -6,6 +6,8 @@ import { SectionHeading, Subheading as SubheadingBase } from "components/misc/He
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import EmailIllustrationSrc from "images/email-illustration.svg";
 import emailjs from '@emailjs/browser';
+import axios from "axios";
+// import sgMail from '@sendgrid/mail';
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -43,20 +45,72 @@ export default ({
   formMethod = "get",
   textOnLeft = true,
 }) => {
-  // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
-  const sendEmail = (e) => {
-    // e.preventDefault(); // prevents the page from reloading when you hit “Send”
-    
-    const userEmail = Form.current.elements.user_email.value;
-    // Make a print statement to see if the email is being sent
-    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', Form.current, 'X1zFNtgTRJGKe9mcK', {to_email: [userEmail, "mariovanrooij@hotmail.com"]})
-      .then((result) => {
-          // show the user a success message
-          // reset the form
-      }, (error) => {
-          // show the user an error
-      });
+  // Prevent refresh on submit
+  const handleSubmit = e => {
+    e.preventDefault();
   };
+  
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [response, setResponse] = useState(null);
+
+  const sendEmail = async (event) => {
+
+    event.preventDefault();
+
+    fetch("https://api.sendgrid.com/v3/mail/send", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Authorization",
+    "Access-Control-Allow-Origin": "*",
+  },
+  body: JSON.stringify({
+    "personalizations": [
+      {
+        "to": [
+          {
+            "email": "mariomariomariovanrooij@gmail.com",
+            "name": "Mario van Rooij"
+          }
+        ],
+        "subject": "Hello, World!"
+      }
+    ],
+    "content": [
+      {
+        "type": "text/plain",
+        "value": "Heya!"
+      }
+    ],
+    "from": {
+      "email": "mariovanrooij@hotmail.com",
+      "name": "Sam Smith"
+    },
+    "reply_to": {
+      "email": "mariovanrooij@hotmail.com",
+      "name": "Sam Smith"
+    }
+  })
+})
+.then(response => response.json())
+.catch(error => console.error(error));
+
+};
+
+
+
 
   return (
     <Container>
@@ -69,16 +123,44 @@ export default ({
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             {description && <Description>{description}</Description>}
-            <Form action={formAction} method={formMethod} onSubmit={sendEmail}>
-              <Input type="email" name="email" placeholder="Your Email Address" />
-              <Input type="text" name="name" placeholder="Full Name" />
-              <Input type="text" name="subject" placeholder="Subject" />
-              <Textarea name="message" placeholder="Your Message Here" />
-              <SubmitButton type="submit" value="Send">{submitButtonText} </SubmitButton>
-            </Form>
+            <form onSubmit={sendEmail}>
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email Address"
+        value={formData.email}
+        required
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        value={formData.name}
+        required
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        value={formData.subject}
+        required
+        onChange={handleChange}
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message Here"
+        value={formData.message}
+        required
+        onChange={handleChange}
+      />
+      <button type="submit">Send</button>
+    </form>
           </TextContent>
         </TextColumn>
       </TwoColumn>
     </Container>
   );
 };
+

@@ -101,7 +101,7 @@ export default ({ roundedHeaderButton }) => {
             <form id="myform" ref={form} action={sendEmail}> 
 
             {/* */}
-              <label>Name2</label>
+              <label>Name</label>
               <input type="text" name="user_name" />
               <label>Email</label>
               <input type="email" name="user_email" />
