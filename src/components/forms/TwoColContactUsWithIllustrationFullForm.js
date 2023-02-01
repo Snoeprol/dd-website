@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef} from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -33,7 +33,15 @@ const Input = tw.input`mt-6 first:mt-0 border-b-2 py-3 focus:outline-none font-m
 const Textarea = styled(Input).attrs({as: "textarea"})`
   ${tw`h-24`}
 `
-
+const Actions = styled.div`
+  ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
+  input {
+    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+  }
+  button {
+    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
+  }
+`;
 const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`
 
 export default ({
@@ -45,75 +53,25 @@ export default ({
   formMethod = "get",
   textOnLeft = true,
 }) => {
-  // Prevent refresh on submit
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
+
+  const form = useRef();
   
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [response, setResponse] = useState(null);
-
-  const sendEmail = async (event) => {
-
-    event.preventDefault();
-
-    fetch("https://api.sendgrid.com/v3/mail/send", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": "Authorization",
-    "Access-Control-Allow-Origin": "*",
-  },
-  body: JSON.stringify({
-    "personalizations": [
-      {
-        "to": [
-          {
-            "email": "mariomariomariovanrooij@gmail.com",
-            "name": "Mario van Rooij"
-          }
-        ],
-        "subject": "Hello, World!"
-      }
-    ],
-    "content": [
-      {
-        "type": "text/plain",
-        "value": "Heya!"
-      }
-    ],
-    "from": {
-      "email": "mariovanrooij@hotmail.com",
-      "name": "Sam Smith"
-    },
-    "reply_to": {
-      "email": "mariovanrooij@hotmail.com",
-      "name": "Sam Smith"
-    }
-  })
-})
-.then(response => response.json())
-.catch(error => console.error(error));
-
-};
-
-
-
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    
+      
+    };
+  
 
   return (
-    <Container>
+ <Container>
       <TwoColumn>
         <ImageColumn>
           <Image imageSrc={EmailIllustrationSrc} />
@@ -122,41 +80,28 @@ export default ({
           <TextContent>
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
-            {description && <Description>{description}</Description>}
-            <form onSubmit={sendEmail}>
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email Address"
-        value={formData.email}
-        required
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        value={formData.name}
-        required
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="subject"
-        placeholder="Subject"
-        value={formData.subject}
-        required
-        onChange={handleChange}
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message Here"
-        value={formData.message}
-        required
-        onChange={handleChange}
-      />
-      <button type="submit">Send</button>
-    </form>
+            <Description>{description}</Description>
+            {/* <Form action={formAction} method={formMethod} onSubmit={sendEmail}>
+              <Input type="email" name="email" placeholder="Your Email Address" />
+              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
+            </Form> */}
+            <Actions>
+              {/* <input type="text" placeholder="Your E-mail Address" />
+              <button>Get Started</button> */}
+              {/* Make the form fit in the screen */}
+            <form id="myform" ref={form} onSubmit={sendEmail}>
+              <label>Name</label>
+              <input type="text" name="user_name" />
+              <label>Email</label>
+              <input type="email" name="user_email" />
+              <label>Message</label>
+              <input type="text" name="message" />
+              <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+              <input type="submit" value="Send" styled=""/>
+            </form>
+
+
+            </Actions>
           </TextContent>
         </TextColumn>
       </TwoColumn>

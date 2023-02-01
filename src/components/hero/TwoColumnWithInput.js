@@ -22,8 +22,25 @@ const Paragraph = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
   
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
-  input {
-    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+  form {
+    ${tw`p-4`}
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 80%;
+    }
+  }
+  input[name="message"] {
+    ${tw`h-20 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
+    @media (max-width: 767px) {
+      height: 20vh;
+    }
+  }
+  input[name="user_name"],
+  input[name="user_email"] {
+    ${tw`h-12 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
+    @media (max-width: 767px) {
+      height: 10vh;
+    }
   }
   button {
     ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
@@ -52,20 +69,17 @@ export default ({ roundedHeaderButton }) => {
   const form = useRef();
   
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-    
-    const userEmail = form.current.elements.user_email.value;
-    // Make a print statement to see if the email is being sent
-    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK', {to_email: "mariovanrooij@hotmail.com"})
-      .then((result) => {
-          // show the user a success message
-          // reset the form
-          form.current.reset();
-      }, (error) => {
-          // show the user an error
-      });
-  };
+    e.preventDefault();
 
+    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    
+
+    };
   // const form = useRef();
 
   // if (form) {
@@ -92,15 +106,13 @@ export default ({ roundedHeaderButton }) => {
               Software Solutions, <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-            Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
+            2Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
             </Paragraph>
             <Actions>
               {/* <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button> */}
               {/* Make the form fit in the screen */}
-            <form id="myform" ref={form} action={sendEmail}> 
-
-            {/* */}
+            <form id="myform" ref={form} onSubmit={sendEmail}>
               <label>Name</label>
               <input type="text" name="user_name" />
               <label>Email</label>
@@ -110,6 +122,7 @@ export default ({ roundedHeaderButton }) => {
               <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <input type="submit" value="Send" styled=""/>
             </form>
+
 
             </Actions>
             <CustomersLogoStrip>
