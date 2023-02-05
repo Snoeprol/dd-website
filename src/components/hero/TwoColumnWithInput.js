@@ -30,7 +30,7 @@ const Actions = styled.div`
     }
   }
   input[name="message"] {
-    ${tw`h-20 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
+    ${tw`h-12 p-4 sm:pr-20 pl-8 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300 focus:border-primary-500 hover:border-gray-500`}
     @media (max-width: 767px) {
       height: 20vh;
       width: 80%;
