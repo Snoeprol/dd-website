@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 //eslint-disable-next-line
 import { css } from "styled-components/macro";
 
 import Header from "../headers/light.js";
-
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import DesignIllustration from "../../images/design-illustration-2.svg";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
@@ -19,7 +18,6 @@ const RightColumn = tw.div`relative mt-12 lg:mt-0 flex-1 flex flex-col justify-c
 const Heading = tw.h1`font-bold text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight`;
 const Paragraph = tw.p`my-5 lg:my-8 text-base xl:text-lg`;
 
-  
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   form {
@@ -67,21 +65,27 @@ const CustomersLogoStrip = styled.div`
 `;
 
 export default ({ roundedHeaderButton }) => {
-
   const form = useRef();
-  
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_cbu7w2k', 'template_pbk5ecc', form.current, 'X1zFNtgTRJGKe9mcK')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_cbu7w2k",
+        "template_pbk5ecc",
+        form.current,
+        "X1zFNtgTRJGKe9mcK"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-    
-
-    };
+        }
+      );
+  };
   // const form = useRef();
 
   // if (form) {
@@ -96,7 +100,6 @@ export default ({ roundedHeaderButton }) => {
   //   });
   //   });
   //   }
-  
 
   return (
     <>
@@ -108,26 +111,27 @@ export default ({ roundedHeaderButton }) => {
               Software Solutions, <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-            Empowering businesses with innovative software solutions to streamline processes, increase efficiency, and drive growth.
+              Empowering businesses with innovative software solutions to
+              streamline processes, increase efficiency, and drive growth.
             </Paragraph>
             <Actions>
               {/* <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button> */}
               {/* Make the form fit in the screen */}
-            <form id="myform" ref={form} onSubmit={sendEmail}>
-              <label>Name</label>
-              <input type="text" name="user_name" />
-              <p> &nbsp;</p>
-              <label>Email</label>
-              <input type="email" name="user_email" />
-              <p> &nbsp;</p>
-              <label>Message</label>
-              <input type="text" name="message" />
-              <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              <button type="submit" value="Send">Send</button>
-            </form>
-
-
+              <form id="myform" ref={form} onSubmit={sendEmail}>
+                <label>Name</label>
+                <input type="text" name="user_name" />
+                <p> &nbsp;</p>
+                <label>Email</label>
+                <input type="email" name="user_email" />
+                <p> &nbsp;</p>
+                <label>Message</label>
+                <input type="text" name="message" />
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <button type="submit" value="Send">
+                  Send
+                </button>
+              </form>
             </Actions>
             <CustomersLogoStrip>
               {/* <p>Our TRUSTED Customers</p>
@@ -136,7 +140,11 @@ export default ({ roundedHeaderButton }) => {
           </LeftColumn>
           <RightColumn>
             <IllustrationContainer>
-              <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
+              <img
+                tw="min-w-0 w-full max-w-lg xl:max-w-3xl"
+                src={DesignIllustration}
+                alt="Design Illustration"
+              />
             </IllustrationContainer>
           </RightColumn>
         </TwoColumn>
